@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-demo-service
+spec:
+  type: NodePort
+  selector:
+    app: node-demo-app
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30007   # NodePort exposes it locally on this port
+

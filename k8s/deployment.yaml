@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-demo-app
+  template:
+    metadata:
+      labels:
+        app: node-demo-app
+    spec:
+      containers:
+        - name: node-demo-app
+          image: donsasi/node-demo-app:1.0   # use your DockerHub image
+          ports:
+            - containerPort: 3000
+
